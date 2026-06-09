@@ -1,0 +1,1 @@
+- [Flow series design](flow-series-design.md) — design intent, references (Fidenza, flow-field article), and the single-piece no-overlap constraint for the Flow series
