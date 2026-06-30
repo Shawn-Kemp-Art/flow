@@ -817,6 +817,12 @@ paper.view.autoUpdate = false;
 
 (async () => {
 
+// Warm-up: force one paint/yield before any Clipper boolean runs. The very first
+// Clipper op silently returns empty if it executes before paper.js has rendered once,
+// which would drop the first (bottom) layer's frame and leave the piece a layer short.
+paper.view.update();
+await new Promise(resolve => setTimeout(resolve, 0));
+
 //---- Draw the Layers
 
 
